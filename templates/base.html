@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Contact Management</title>
+  <title>Django CRM Project</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
@@ -73,9 +73,23 @@
           <span>Profile</span></a>
       </li>
 
-      <!-- Nav Item - Logout -->
+      <!-- Nav Item - Change Password -->
       <li class="nav-item">
         <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-key"></i>
+          <span>Change Password</span></a>
+      </li>
+
+      <!-- Nav Item - Forgot Password -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-key"></i>
+          <span>Forgot Password</span></a>
+      </li>
+
+      <!-- Nav Item - Logout -->
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
           <i class="fas fa-fw fa-sign-out-alt"></i>
           <span>Logout</span></a>
       </li>

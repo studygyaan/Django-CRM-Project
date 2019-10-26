@@ -135,3 +135,5 @@ try:
     from crm_main.local_settings import *
 except ImportError:
     pass
+
+LOGIN_REDIRECT_URL = 'dashboard'
