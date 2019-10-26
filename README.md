@@ -10,6 +10,3 @@ I am trying to create a Tutorial on How yo Create CRM or Contact Management Syst
 5. Run the Application - `python manage.py runserver`
 6. Migrate
 
-Product add url - http://localhost:8000/product-add/
-
-Product update url - http://localhost:8000/product-update/3
