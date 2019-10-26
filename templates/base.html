@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load crispy_forms_tags %} 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,16 +75,9 @@
 
       <!-- Nav Item - Change Password -->
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{% url 'change-password' %}">
           <i class="fas fa-fw fa-key"></i>
           <span>Change Password</span></a>
-      </li>
-
-      <!-- Nav Item - Forgot Password -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-key"></i>
-          <span>Forgot Password</span></a>
       </li>
 
       <!-- Nav Item - Logout -->
