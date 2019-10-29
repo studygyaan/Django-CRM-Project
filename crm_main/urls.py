@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 
-from apps.common.views import HomeView, SignUpView, DashboardView
+
+from apps.common.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView
 
 from django.contrib.auth import views as auth_views
 
@@ -10,6 +11,9 @@ urlpatterns = [
     
     path('', HomeView.as_view(), name='home'),
     path('dashboard/', DashboardView.as_view(), name='dashboard'),
+
+    path('profile-update/', ProfileUpdateView.as_view(), name='profile-update'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 
     # Authentication 
     path('register/', SignUpView.as_view(), name="register"),
@@ -27,7 +31,7 @@ urlpatterns = [
     ),
 
     path(
-        'change-password',
+        'change-password/',
         auth_views.PasswordChangeView.as_view(
             template_name='common/change-password.html',
             success_url='/'
@@ -62,3 +66,10 @@ urlpatterns = [
 
     
 ]
+
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

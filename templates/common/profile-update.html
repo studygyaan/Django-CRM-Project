@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %} 
+
+{% block content %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
+        <h1 class="h3 mb-0 text-gray-800">Profile Update</h1>
+        </div>          
+
+        <!-- Main Content Here -->
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <div class="row">
+              <div class="col-lg-3"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Update Your Profile!</h1>
+                  </div>
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{user_form | crispy}}
+                    {{profile_form | crispy}}
+                    <button type="submit" class="btn btn-success btn-block">Update</button>
+                  </form>
+                  <hr>
+                  <div class="text-center">
+                    <a class="small" href="{% url 'home' %}">Back</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+    </div>
+    <!-- /.container-fluid -->
+{% endblock content %}

@@ -41,7 +41,7 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'crispy_forms',
-
+    'django_cleanup',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
