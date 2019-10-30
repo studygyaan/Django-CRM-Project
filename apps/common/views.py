@@ -31,10 +31,12 @@ class SignUpView(CreateView):
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.contrib import messages
 from .forms import UserForm, ProfileForm
 from django.contrib.auth.models import User
 from apps.userprofile.models import Profile
+
+
+from django.contrib import messages
 
 class ProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'common/profile.html'
@@ -55,7 +57,7 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile was successfully updated!')
+            messages.error(request, "Your profile is updated successfully!")
             return HttpResponseRedirect(reverse_lazy('profile'))
 
         context = self.get_context_data(
@@ -67,3 +69,5 @@ class ProfileUpdateView(LoginRequiredMixin, TemplateView):
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
+
+
