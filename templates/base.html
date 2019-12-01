@@ -18,9 +18,10 @@
   <!-- Custom styles for this template-->
   <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
 
-  Date Time
+  <!-- Date Time Picker CSS -->
   <link rel="stylesheet" href="{% static 'date-time-phone/jquery-ui.css' %}">
   <link rel='stylesheet' href="{% static 'date-time-phone/jquery-ui-timepicker-addon.css' %}" />
+  <!-- Date Time Picker CSS -->
 
 </head>
 
@@ -141,27 +142,31 @@
     }, 2000)
   </script>
 
-<script src="{% static 'date-time-phone/jquery-ui.js' %}" ></script>
-<script src="{% static 'date-time-phone/jquery-ui-timepicker-addon.js' %}"></script> 
+  <!-- Date Time Picker JS -->
+  <script src="{% static 'date-time-phone/jquery-ui.js' %}" ></script>
+  <script src="{% static 'date-time-phone/jquery-ui-timepicker-addon.js' %}"></script> 
 
-<script>
-  $( function() {
-      // $( "#id_birth_date" ).datetimepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
-      $( "#id_birth_date" ).timepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
-      // $( "#id_birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' }).attr("autocomplete", "off") ;
-  });
+  <script>
+    $( function() {
+        // $( "#id_birth_date" ).datetimepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
+        // $( "#id_birth_date" ).timepicker({ dateFormat: 'yy-mm-dd', maxDate: 0, controlType: 'select'}).attr("autocomplete", "off") ;
+        $( "#id_birth_date" ).datepicker({ dateFormat: 'yy-mm-dd' }).attr("autocomplete", "off") ;
+    });
   </script>
+  <!-- Date Time Picker JS -->
 
-<script src="{% static 'date-time-phone/jquery-input-mask-phone-number.min.js' %}"></script> 
+  <!-- Phone Mask JS -->
+  <script src="{% static 'date-time-phone/jquery-input-mask-phone-number.min.js' %}"></script> 
 
-<script>
-  //(xxx) xxx-xxxx format code
-  $(document).ready(function () {
-      $('#id_phone_number').usPhoneFormat({
-          format: '(xxx) xxx-xxxx',
-      });   
-  });
+  <script>
+    //(xxx) xxx-xxxx format code
+    $(document).ready(function () {
+        $('#id_phone_number').usPhoneFormat({
+            format: '(xxx) xxx-xxxx',
+        });   
+    });
   </script>
+  <!-- Phone Mask JS -->
 
 </body>
 

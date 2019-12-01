@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 
 from apps.common.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView
@@ -64,7 +64,7 @@ urlpatterns = [
          ),
          name='password_reset_complete'),
 
-    
+    path('oauth/', include('social_django.urls', namespace='social')),  # <-- here
 ]
 
 
