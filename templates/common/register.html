@@ -44,10 +44,13 @@
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" href="#">Forgot Password?</a>
+                <a class="small" href="{% url 'password_reset' %}">Forgot Password?</a>
               </div>
               <div class="text-center">
-                <a class="small" href="#">Already have an account? Login!</a>
+                <a class="small" href="{% url 'login' %}">Already have an account? Login!</a>
+              </div>
+              <div class="text-center">
+                <a class="small" href="{% url 'home' %}">Home</a>
               </div>
             </div>
           </div>
